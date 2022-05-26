@@ -1,8 +1,8 @@
 <html lang="en">
-<%- include("./partials/head.ejs") %>
+<%- include("../partials/head.ejs") %>
 
     <body>
-        <%- include("./partials/nav.ejs") %>
+        <%- include("../partials/nav.ejs") %>
 
             <div class="details content">
                 <h2>
@@ -13,10 +13,15 @@
                         <%= blog.body %>
                     </p>
                 </div>
-                <a class="delete" data-doc="<%= blog._id %>">delete</a>
+                <a class="delete" data-doc="<%= blog._id %>">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+                    </svg>
+                </a>
             </div>
 
-            <%- include("./partials/footer.ejs") %>
+            <%- include("../partials/footer.ejs") %>
 
                 <script>
                     const trashcan = document.querySelector('a.delete');
