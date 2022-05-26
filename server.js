@@ -3,7 +3,7 @@ const fs = require('fs');
 const _ = require('lodash');
 
 const server = http.createServer((req, res) => {
-    
+
     // lodash
     const num = _.random(0, 20);
     console.log(num);
@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
     // routing
     let path = './views/';
 
-    switch(req.url) {
+    switch (req.url) {
         case '/':
             path += 'index.html';
             res.statusCode = 200;
@@ -43,7 +43,7 @@ const server = http.createServer((req, res) => {
 
     // send a html file
     fs.readFile(path, (err, data) => {
-        if(err) {
+        if (err) {
             console.log(err);
             res.end();
         } else {
